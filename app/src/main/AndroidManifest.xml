@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.erhansen.popularmovies">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PopularMovies">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".view.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.PopularMovies">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
