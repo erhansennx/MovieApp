@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="horizontal"
+    android:background="@drawable/layout_border">
+
+
+    <ImageView
+        android:id="@+id/movieImageView"
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1.2dp"
+        android:layout_marginLeft="1.2dp"
+        android:layout_marginBottom="1.2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/movieTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:hint="Movie Title">
+        </TextView>
+
+        <TextView
+            android:id="@+id/movieReleaseDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:hint="Release Date Text"
+            android:layout_marginTop="1dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/movieVoteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:hint="Vote Text"
+            android:layout_marginTop="1dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/movieLanguageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:hint="Movie Language"
+            android:layout_marginTop="1dp">
+        </TextView>
+
+        <Button
+            android:id="@+id/movieDetailsButton"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/poppinsregular"
+            android:textAllCaps="false"
+            android:text="Details"
+            android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24">
+        </Button>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
