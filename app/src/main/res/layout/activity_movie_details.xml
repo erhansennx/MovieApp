@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/detailBG"
+    tools:context=".view.MovieDetailsActivity">
+
+
+    <ImageView
+        android:id="@+id/movieBackdropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/moviePosterImageView"
+        android:layout_width="130dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="15dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/layout_border"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="@+id/movieBackdropImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movieBackdropImageView"
+        app:shapeAppearanceOverlay="@style/roundImageView"></com.google.android.material.imageview.ShapeableImageView>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/moviePosterImageView"
+        app:layout_constraintTop_toBottomOf="@+id/movieBackdropImageView">
+
+        <TextView
+            android:id="@+id/movieDetailTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:hint="Movie Title"
+            android:textColor="@color/c4"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/moviePosterImageView"
+            app:layout_constraintStart_toEndOf="@+id/moviePosterImageView"
+            app:layout_constraintTop_toBottomOf="@+id/movieBackdropImageView"></TextView>
+
+        <TextView
+            android:id="@+id/movieDetailVoteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:hint="Vote Text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/movieDetailTitleText"
+            app:layout_constraintTop_toBottomOf="@+id/movieDetailTitleText"></TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/movieDetailReleaseDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppinslight"
+        android:gravity="center"
+        android:hint="Movie Release Date"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/moviePosterImageView"
+        app:layout_constraintStart_toStartOf="@+id/moviePosterImageView"
+        app:layout_constraintTop_toBottomOf="@+id/moviePosterImageView"></TextView>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="left"
+        android:hint="Movie Release Date"
+        android:text="About the Movie"
+        android:textColor="@color/c4"
+        android:textSize="16sp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movieDetailReleaseDateText"></TextView>
+
+    <TextView
+        android:id="@+id/movieOverviewText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppinslight"
+        android:gravity="left|top"
+        android:hint="Movie Overview"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"></TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
