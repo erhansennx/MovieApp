@@ -16,7 +16,7 @@
 
     <style name="roundImageView" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">7dp</item>
+        <item name="cornerSize">4dp</item>
         <item name="color">@color/white</item>
     </style>
 </resources>

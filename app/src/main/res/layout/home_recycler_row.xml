@@ -9,7 +9,7 @@
     android:background="@drawable/layout_border">
 
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/movieImageView"
         android:layout_width="140dp"
         android:layout_height="match_parent"
@@ -17,9 +17,11 @@
         android:layout_marginLeft="1.2dp"
         android:layout_marginBottom="1.2dp"
         android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher_background"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ImageView>
+        app:layout_constraintTop_toTopOf="parent"></com.google.android.material.imageview.ShapeableImageView>
 
 
     <LinearLayout

@@ -1,5 +1,6 @@
 package com.erhansen.popularmovies.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,15 +13,14 @@ import androidx.lifecycle.get
 import androidx.recyclerview.widget.RecyclerView
 import com.erhansen.popularmovies.adapter.HomeRecyclerAdapter
 import com.erhansen.popularmovies.databinding.FragmentHomeBinding
-import com.erhansen.popularmovies.model.MovieModel
+import com.erhansen.popularmovies.model.Result
 import com.erhansen.popularmovies.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 
-
     private lateinit var homeViewModel: HomeViewModel
+    private lateinit var arrayList: ArrayList<Result>
     private lateinit var homeRecyclerView: RecyclerView
-    private lateinit var arrayList: ArrayList<MovieModel>
     private lateinit var fragmentHomeBinding: FragmentHomeBinding
     private lateinit var homeRecyclerAdapter: HomeRecyclerAdapter
 
@@ -30,7 +30,6 @@ class HomeFragment : Fragment() {
         homeRecyclerView = fragmentHomeBinding.homeRecyclerView
         homeRecyclerAdapter = HomeRecyclerAdapter(requireContext(),arrayList)
         homeRecyclerView.adapter = homeRecyclerAdapter
-
         return fragmentHomeBinding.root
     }
 
@@ -38,6 +37,16 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         homeViewModel.refreshData()
+
+        with(fragmentHomeBinding) {
+            swipeRefreshLayout.setOnRefreshListener {
+                homeRecyclerView.visibility = View.GONE
+                progressBar.visibility = View.VISIBLE
+                homeViewModel.refreshData()
+                swipeRefreshLayout.isRefreshing = false
+                arrayList.clear()
+            }
+        }
         observeLiveData()
     }
 
@@ -47,9 +56,8 @@ class HomeFragment : Fragment() {
                 fragmentHomeBinding.progressBar.visibility = View.GONE
                 homeRecyclerView.visibility = View.VISIBLE
                 for (i in it.results) {
-                    arrayList.add(it)
+                    arrayList.add(i)
                 }
-                homeRecyclerAdapter.notifyDataSetChanged()
             }
         })
         homeViewModel.popularMoviesError.observe(viewLifecycleOwner, Observer {
