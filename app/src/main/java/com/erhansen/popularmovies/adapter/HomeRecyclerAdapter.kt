@@ -26,7 +26,7 @@ class HomeRecyclerAdapter(private val context: Context, private val popularMovie
         holder.binding.movieTitleText.text = popularMovieList[position].title
         holder.binding.movieReleaseDateText.text = "Release Date: ${popularMovieList[position].release_date}"
         holder.binding.movieVoteText.text = "Vote: ${popularMovieList[position].vote_average}"
-        holder.binding.movieLanguageText.text = "Language: ${popularMovieList[position].original_language}"
+        holder.binding.movieLanguageText.text = "Language: ${popularMovieList[position].original_language.uppercase()}"
         holder.binding.movieImageView.downloadImage("${Constants.IMAGE_BASEURL}${popularMovieList[position].poster_path}", placeHolderLoadingBar(context))
         holder.binding.movieDetailsButton.setOnClickListener {
             val intent = Intent(context,MovieDetailsActivity::class.java)
@@ -35,7 +35,7 @@ class HomeRecyclerAdapter(private val context: Context, private val popularMovie
             intent.putExtra("Movie Title", popularMovieList[position].title)
             intent.putExtra("Movie Release Date", popularMovieList[position].release_date)
             intent.putExtra("Movie Vote", popularMovieList[position].vote_average)
-            intent.putExtra("Movie Language", popularMovieList[position].original_language)
+            intent.putExtra("Movie Language", popularMovieList[position].original_language.uppercase())
             intent.putExtra("Movie Overview", popularMovieList[position].overview)
             context.startActivity(intent)
         }

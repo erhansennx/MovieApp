@@ -4,11 +4,11 @@
     <item
         android:id="@+id/buttonHomePage"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home Page"></item>
+        android:title="Home"></item>
 
     <item
         android:id="@+id/buttonFavorite"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="Favorites"></item>
+        android:title="Watch List"></item>
 
 </menu>
