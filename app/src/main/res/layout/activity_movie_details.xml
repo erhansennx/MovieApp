@@ -9,8 +9,6 @@
     tools:context=".view.MovieDetailsActivity">
 
 
-
-
     <ImageView
         android:id="@+id/movieBackdropImageView"
         android:layout_width="match_parent"
@@ -19,15 +17,6 @@
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ImageView>
-
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/ic_baseline_bookmark_border_24"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"></ImageView>
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -101,6 +90,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppinsmedium"
         android:gravity="left"
@@ -108,28 +98,48 @@
         android:text="About the Movie"
         android:textColor="@color/c4"
         android:textSize="16sp"
-        android:layout_marginLeft="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movieDetailReleaseDateText"></TextView>
 
-    <TextView
-        android:id="@+id/movieOverviewText"
-        android:layout_width="0dp"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:fontFamily="@font/poppinslight"
         android:gravity="left|top"
-        android:hint="Movie Overview"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/addToWatchlist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/movieOverviewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinslight"
+            android:hint="Movie Overview"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"></TextView>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addToWatchlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/c4"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center"
+        android:text="Add to Watchlist"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0"></TextView>
-
+        app:layout_constraintStart_toStartOf="parent"></androidx.appcompat.widget.AppCompatButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

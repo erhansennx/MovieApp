@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                         replaceFragment(HomeFragment())
                     }
                     R.id.buttonFavorite -> {
-                        replaceFragment(FavoriteFragment())
+                        replaceFragment(WatchlistFragment())
                     }
                 }
                 return@setOnItemSelectedListener true

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/watchlistMovieImageView"
+            android:layout_width="115dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/roundImageView"></com.google.android.material.imageview.ShapeableImageView>
+
+        <TextView
+            android:id="@+id/watchlistMovieRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="7dp"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/watchlistMovieImageView"
+            app:layout_constraintTop_toTopOf="@+id/watchlistMovieImageView"></TextView>
+
+        <TextView
+            android:id="@+id/watchlistMovieTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:hint="Movie Title"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/watchlistMovieImageView"
+            app:layout_constraintTop_toBottomOf="@+id/watchlistMovieImageView"></TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
