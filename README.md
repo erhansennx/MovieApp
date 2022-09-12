@@ -3,6 +3,7 @@
 <strong>Hello Everyone!</strong> <br>
 
 In this project, I developed a mobile application using the api showing popular movies from https://www.themoviedb.org/.<br>
+
 With this API, We can get the names, details, languages, voting rates, release dates, pictures and many more data of popular movies. 
 
 Using this data, I developed an application where we can see the popular movies, their details and save the movies we like in the application to our watch list.
