@@ -9,12 +9,12 @@ With this API, We can get the names, details, languages, voting rates, release d
 Using this data, I developed an application where we can see the popular movies, their details and save the movies we like in the application to our watch list.
 
 <strong>Libraries I used while developing the project:</strong>
+- MVVM
 - Retrofit
 - RXJava
 - Glide
 - Swipe
 - SQLite
-- ScrollView
 
 <br>
 <ul>
